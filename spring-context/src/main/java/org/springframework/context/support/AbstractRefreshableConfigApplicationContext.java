@@ -83,6 +83,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 			this.configLocations = new String[locations.length];
 			for (int i = 0; i < locations.length; i++) {
 				// resolvePath为同一个类中将字符串解析为路径的方法
+				// spring支持active profile，这里转换active profile的占位符 application-${profile}.xml -> application-dev.xml
 				this.configLocations[i] = resolvePath(locations[i]).trim();
 			}
 		}

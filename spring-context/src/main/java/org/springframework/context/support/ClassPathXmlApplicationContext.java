@@ -134,13 +134,12 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	 * @throws BeansException if context creation failed
 	 * @see #refresh()
 	 */
-	public ClassPathXmlApplicationContext(
-			String[] configLocations, boolean refresh, @Nullable ApplicationContext parent)
-			throws BeansException {
-
+	public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh, @Nullable ApplicationContext parent) throws BeansException {
+		// 兼容spring MVC容器？
 		super(parent);
 		setConfigLocations(configLocations);
 		if (refresh) {
+			//@Main method
 			refresh();
 		}
 	}

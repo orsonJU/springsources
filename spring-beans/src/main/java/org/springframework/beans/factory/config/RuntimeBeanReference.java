@@ -28,6 +28,8 @@ import org.springframework.util.Assert;
  * @see BeanDefinition#getPropertyValues()
  * @see org.springframework.beans.factory.BeanFactory#getBean
  */
+// 再spring解析<bean>配置的时候，所依赖的ref是还没有初始化的，spring会使用一个RuntimeBeanReference来指代
+// 当处于spring的bean的初始化阶段，这个RuntimeBeanReference就会被解析
 public class RuntimeBeanReference implements BeanReference {
 
 	private final String beanName;
@@ -35,6 +37,7 @@ public class RuntimeBeanReference implements BeanReference {
 	private final boolean toParent;
 
 	@Nullable
+	// 说明了引用的bean实例在解析<bean>配置的时候可以为null
 	private Object source;
 
 

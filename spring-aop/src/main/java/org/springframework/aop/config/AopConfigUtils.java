@@ -135,6 +135,7 @@ public abstract class AopConfigUtils {
 			return null;
 		}
 
+		// idea 创建一个AnnotationAwareAspectJAutoProxyCreator bean实例，这册到spring容器中
 		RootBeanDefinition beanDefinition = new RootBeanDefinition(cls);
 		beanDefinition.setSource(source);
 		beanDefinition.getPropertyValues().add("order", Ordered.HIGHEST_PRECEDENCE);

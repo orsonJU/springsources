@@ -31,6 +31,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * @since 3.1
  * @see EnableAspectJAutoProxy
  */
+// idea 当我们使用注册@EnableAspectJAutoProxy的时候，spring会实现一个ImportBeanDefinitionRegistrar来解释
 class AspectJAutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 
 	/**
@@ -44,6 +45,7 @@ class AspectJAutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 
 		AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(registry);
 
+		// idea 使用spring提供的AnnotationConfigUtils可以获取对应的配置
 		AnnotationAttributes enableAspectJAutoProxy =
 				AnnotationConfigUtils.attributesFor(importingClassMetadata, EnableAspectJAutoProxy.class);
 		if (enableAspectJAutoProxy != null) {

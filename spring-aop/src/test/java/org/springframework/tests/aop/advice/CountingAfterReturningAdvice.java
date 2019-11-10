@@ -30,6 +30,7 @@ public class CountingAfterReturningAdvice extends MethodCounter implements After
 
 	@Override
 	public void afterReturning(Object o, Method m, Object[] args, Object target) throws Throwable {
+		// idea 对方法调用进行统计
 		count(m);
 	}
 

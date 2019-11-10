@@ -55,6 +55,7 @@ class ObjenesisCglibAopProxy extends CglibAopProxy {
 	@Override
 	@SuppressWarnings("unchecked")
 	protected Object createProxyClassAndInstance(Enhancer enhancer, Callback[] callbacks) {
+		// idea cglib的核心代码
 		Class<?> proxyClass = enhancer.createClass();
 		Object proxyInstance = null;
 

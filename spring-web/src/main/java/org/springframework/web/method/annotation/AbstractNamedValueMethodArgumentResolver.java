@@ -64,6 +64,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 public abstract class AbstractNamedValueMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
 	@Nullable
+	// idea 因为在spring中，核心是容器，所以所有需要从容器中获取资源的都牵扯bean factory
 	private final ConfigurableBeanFactory configurableBeanFactory;
 
 	@Nullable

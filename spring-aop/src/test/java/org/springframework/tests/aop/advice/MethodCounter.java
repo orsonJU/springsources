@@ -38,6 +38,7 @@ public class MethodCounter implements Serializable {
 		count(m.getName());
 	}
 
+	// idea 使用map结构来对方法调用进行统计
 	protected void count(String methodName) {
 		Integer i = map.get(methodName);
 		i = (i != null) ? new Integer(i.intValue() + 1) : new Integer(1);

@@ -62,6 +62,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author Juergen Hoeller
  * @since 3.1
  */
+// 当我们使用注解@PathVariable的时候
 public class PathVariableMethodArgumentResolver extends AbstractNamedValueMethodArgumentResolver
 		implements UriComponentsContributor {
 
@@ -73,6 +74,7 @@ public class PathVariableMethodArgumentResolver extends AbstractNamedValueMethod
 		if (!parameter.hasParameterAnnotation(PathVariable.class)) {
 			return false;
 		}
+		// mist 如果参数是一个map？
 		if (Map.class.isAssignableFrom(parameter.nestedIfOptional().getNestedParameterType())) {
 			PathVariable pathVariable = parameter.getParameterAnnotation(PathVariable.class);
 			return (pathVariable != null && StringUtils.hasText(pathVariable.value()));

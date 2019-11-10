@@ -169,7 +169,7 @@ import org.springframework.web.util.UrlPathHelper;
  * @author Brian Clozel
  * @author Sebastien Deleuze
  * @since 3.1
- * @see EnableWebMvc
+ * @see EnableWebMvcn
  * @see WebMvcConfigurer
  */
 public class WebMvcConfigurationSupport implements ApplicationContextAware, ServletContextAware {

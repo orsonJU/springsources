@@ -134,6 +134,7 @@ public class TransactionTemplate extends DefaultTransactionDefinition
 			return ((CallbackPreferringPlatformTransactionManager) this.transactionManager).execute(this, action);
 		}
 		else {
+			// idea spring使用编程式的事务管理
 			TransactionStatus status = this.transactionManager.getTransaction(this);
 			T result;
 			try {
